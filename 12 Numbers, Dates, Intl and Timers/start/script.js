@@ -261,3 +261,28 @@ const calcDaysPassed = (date1, date2) =>
   Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
 
 console.log(calcDaysPassed(new Date(2024, 4, 14), new Date(2024, 4, 24)));
+
+// Date Practice
+
+const now = new Date();
+const options = {
+  hours: "numeric",
+  minutes: "numeric",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  weekday: "long",
+};
+
+const localLang = navigator.language;
+console.log(localLang);
+const intldate = new Intl.DateTimeFormat(localLang, options).format(now);
+console.log(intldate);
+
+const nowDay = `${now.getDate()}`.padStart(2, 0);
+const nowMonth = `${now.getMonth() + 1}`.padStart(2, 0);
+const nowYear = now.getFullYear();
+const nowHour = `${now.getHours()}`.padStart(2, 0);
+const nowMinute = `${now.getMinutes()}`.padStart(2, 0);
+
+console.log(`${nowDay}/${nowMonth}/${nowYear} - ${nowHour}:${nowMinute}`);
