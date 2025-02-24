@@ -20,6 +20,29 @@ console.log(j instanceof Person);
 Person.prototype.calcAge = function () {
   console.log(2035 - this.birthYear);
 };
+
+// construnction function for student.
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+Student.prototype = Object.create(Person.prototype);
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I stydy ${this.course}`);
+};
+
+mike.introduce();
+mike.calcAge();
+Student.prototype.constructor = Student;
+
+console.log('Mike', mike.__proto__);
+
+console.log('Person ++', Person.prototype);
+console.log('Student ++', Student.prototype);
+
 j.calcAge();
 
 console.log(j.__proto__);
@@ -126,3 +149,5 @@ console.log(account.latest);
 
 account.latest = 300;
 console.log(account.latest);
+
+// inheritance
