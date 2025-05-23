@@ -1,0 +1,18 @@
+{
+  "name": "17-modern-js",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Jonas",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  }
+}
